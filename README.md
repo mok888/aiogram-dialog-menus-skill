@@ -1,6 +1,6 @@
 # aiogram-dialog-menus
 
-OpenCode skill for building interactive Telegram bot menus using `aiogram_dialog` v2.x.
+AI coding assistant skill for building interactive Telegram bot menus using `aiogram_dialog` v2.x. Compatible with OpenCode, Claude, Codex, and other AI coding agents.
 
 ## What This Does
 
@@ -13,10 +13,23 @@ Provides expert knowledge for creating:
 
 ## Installation
 
-Ask your AI agent to install it:
+### OpenCode
+
+Ask your AI agent:
 
 ```
-Install the aiogram-dialog-menus skill by copying the skill folder to ~/.config/opencode/skills/
+Install the aiogram-dialog-menus skill from https://github.com/mok888/aiogram-dialog-menus-skill into ~/.config/opencode/skills/
+```
+
+### Manual
+
+Clone or download this repo to your agent's skills directory:
+
+```bash
+# OpenCode
+git clone https://github.com/mok888/aiogram-dialog-menus-skill ~/.config/opencode/skills/aiogram-dialog-menus
+
+# Or copy the SKILL.md content directly for agents that support custom instructions
 ```
 
 ## Usage
