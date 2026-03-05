@@ -21,15 +21,48 @@ Ask your AI agent:
 Install the aiogram-dialog-menus skill from https://github.com/mok888/aiogram-dialog-menus-skill into ~/.config/opencode/skills/
 ```
 
+### Claude CLI
+
+Add to your global instructions:
+
+```bash
+# Create user-level CLAUDE.md if it doesn't exist
+mkdir -p ~/.claude
+
+# Append skill content to your global instructions
+curl -sL https://raw.githubusercontent.com/mok888/aiogram-dialog-menus-skill/main/SKILL.md >> ~/.claude/CLAUDE.md
+```
+
+Or for project-specific use, copy `SKILL.md` content to your project's `CLAUDE.md`:
+```bash
+# Project-level (committed to git)
+curl -sL https://raw.githubusercontent.com/mok888/aiogram-dialog-menus-skill/main/SKILL.md >> ./CLAUDE.md
+```
+
+### Codex CLI
+
+Add to your global instructions:
+
+```bash
+# Create Codex home directory if it doesn't exist
+mkdir -p ~/.codex
+
+# Append skill content to your global AGENTS.md
+curl -sL https://raw.githubusercontent.com/mok888/aiogram-dialog-menus-skill/main/SKILL.md >> ~/.codex/AGENTS.md
+```
+
+Or for project-specific use:
+```bash
+# Project-level AGENTS.md (Codex auto-discovers this)
+curl -sL https://raw.githubusercontent.com/mok888/aiogram-dialog-menus-skill/main/SKILL.md >> ./AGENTS.md
+```
+
 ### Manual
 
 Clone or download this repo to your agent's skills directory:
 
 ```bash
-# OpenCode
-git clone https://github.com/mok888/aiogram-dialog-menus-skill ~/.config/opencode/skills/aiogram-dialog-menus
-
-# Or copy the SKILL.md content directly for agents that support custom instructions
+git clone https://github.com/mok888/aiogram-dialog-menus-skill
 ```
 
 ## Usage
