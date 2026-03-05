@@ -1,7 +1,7 @@
 # AIODIALOG-MENUS SKILL KNOWLEDGE BASE
 
 **Generated:** 2026-03-05
-**Type:** OpenCode Skill (single-file)
+**Type:** AI Coding Agent Skill (OpenCode, Claude, Codex, etc.)
 
 ## OVERVIEW
 Reference skill for building interactive Telegram bot menus using `aiogram_dialog` library. Covers Dialog > Windows > Widgets architecture with Python async patterns.
