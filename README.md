@@ -1,6 +1,6 @@
 # aiogram-dialog-menus
 
-AI coding assistant skill for building interactive Telegram bot menus using `aiogram_dialog` v2.x. Compatible with OpenCode, Claude, Codex, and other AI coding agents.
+AI coding assistant skill for building interactive Telegram bot menus using `aiogram_dialog` v2.x (latest: 2.6.0). Compatible with OpenCode, Claude, Codex, and other AI coding agents.
 
 ## What This Does
 
@@ -9,6 +9,9 @@ Provides expert knowledge for creating:
 - Menu systems with nested options
 - Polls and surveys with interactive selection
 - Admin panels with toggleable settings
+- Calendar/date pickers
+- Media galleries with scrolling
+- Paginated item lists
 - Any complex stateful user interaction
 
 ## Installation
@@ -80,13 +83,15 @@ Once installed, the skill activates automatically when:
 "Build a settings menu with toggles using aiogram_dialog"
 "Add a language selector to my bot menu"
 "Implement an admin panel with multiselect options"
+"Create a calendar date picker for booking"
+"Build a paginated product list with scrolling"
 ```
 
 ## Prerequisites
 
 - Python 3.9+
 - aiogram ≥3.14
-- aiogram-dialog v2.x
+- aiogram-dialog v2.x (latest: 2.6.0)
 
 ```bash
 pip install aiogram>=3.14 aiogram-dialog
@@ -96,14 +101,30 @@ pip install aiogram>=3.14 aiogram-dialog
 
 | Topic | Description |
 |-------|-------------|
-| Setup | Registry, setup_dialogs(), handler registration |
-| Dialogs | Dialog class, Window, StatesGroup |
-| Widgets | Button, Select, Multiselect, Radio, Checkbox |
-| Layout | Row, Column, Group, ScrollingGroup |
-| Data | Getters, dialog_data, start_data |
-| Navigation | switch_to, start, back, done |
-| Errors | UnknownIntent, UnknownState handlers |
-| Migration | v1 → v2 changes |
+| **Core concepts** | Dialog > Windows > Widgets architecture, key components |
+| **Setup** | `setup_dialogs()`, handler registration, Dialog/Window/StatesGroup |
+| **Buttons** | Button, SwitchTo, Next, Back, Cancel, Start |
+| **URL & special** | Url, WebApp, LoginURLButton, SwitchInlineQuery*, CopyText |
+| **Request buttons** | RequestContact, RequestLocation, RequestPoll |
+| **Selection** | Select, Multiselect, Radio, Toggle, Checkbox |
+| **Calendar** | Calendar, CalendarConfig, ManagedCalendar |
+| **Counter** | Counter, ManagedCounter (+/- with cycle, min/max) |
+| **Lists & scrolling** | ListGroup, ScrollingGroup, StubScroll |
+| **Pager controls** | NumberedPager, PrevPage, NextPage, CurrentPage, SwitchPage |
+| **Layout** | Row, Column, Group (width-based wrapping) |
+| **Text widgets** | Const, Format, Multi, Case, Progress, List, Jinja, ScrollingText |
+| **Media** | StaticMedia, DynamicMedia, MediaScroll |
+| **Input** | TextInput (type_factory, on_success/on_error), MessageInput |
+| **Data flow** | Getters (dict return), dialog_data (dict access), start_data |
+| **Launch modes** | StartMode, LaunchMode, ShowMode |
+| **Background** | BgManagerFactory, bg(), fg() context manager |
+| **Managed widgets** | `manager.find()` → Managed* variants |
+| **Error handling** | UnknownIntent/UnknownState via ExceptionTypeFilter |
+| **Patterns** | Main Menu, Wizard, Admin Panel, Paginated List |
+| **Best practices** | Widget IDs, getter performance, exception handling |
+| **Common mistakes** | Source-verified gotchas and corrections |
+| **Migration** | v1 → v2 breaking changes |
+| **Widget index** | Complete table of 35+ widgets with signatures |
 
 ## Resources
 
